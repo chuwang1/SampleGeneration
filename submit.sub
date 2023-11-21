@@ -1,0 +1,12 @@
+executable             = WORKDIR/RunAllSteps_NODE.sh 
+Arguments = $(ClusterId) $(ProcId)
+getenv                 =  True 
+output                  = log/NODE_slc8_$(ClusterId)_$(ProcId).out 
+error                   = log/NODE_slc8_$(ClusterId)_$(ProcId).err 
+log                     = log/NODE_slc8_$(ClusterId)_$(ProcId).log 
+request_cpus = 8
+x509userproxy = $ENV(X509_USER_PROXY)
++JobFlavour = "nextweek"
+should_transfer_files = YES
+Transfer_Input_Files = RunAllSteps_NODE.sh, Step1.sh , Step2.sh, Step3.sh, Step4.sh, bbgg_fragment_NODE.py 
+queue 50
